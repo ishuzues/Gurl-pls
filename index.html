@@ -1,0 +1,4031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>my little scrapbook</title>
+
+<style>
+
+/* =========================================================
+   PALETTE
+========================================================= */
+
+:root {
+    --pink: #f2b3cf;
+    --pink-light: #ffe4ee;
+    --pink-dark: #bd6d96;
+
+    --blue: #bfdff0;
+    --lav: #d8c9ed;
+    --lime: #dceba8;
+
+    --paper: #fffaf2;
+    --paper-dark: #e6d8cd;
+
+    --ink: #554b58;
+    --muted: #8c7886;
+
+    --shadow: rgba(73, 54, 68, .20);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.7) 0 4px,
+            transparent 5px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.55) 0 3px,
+            transparent 4px
+        ),
+        linear-gradient(
+            135deg,
+            #ffdce9,
+            #f3d8e9 42%,
+            #e5d9f2 70%,
+            #e0edcf
+        );
+
+    background-size:
+        95px 95px,
+        125px 125px,
+        auto;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+::selection {
+    background: var(--pink);
+    color: white;
+}
+
+
+/* =========================================================
+   PASSWORD PAGE
+========================================================= */
+
+#passwordScreen {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #ffc9df 0,
+            #ffc9df 25px,
+            #f4afd0 26px,
+            #f4afd0 50px
+        );
+}
+
+
+/* =========================================================
+   METALLIC IPOD
+========================================================= */
+
+.metal-ipod {
+    position: relative;
+
+    border-radius: 34px;
+
+    border:
+        3px solid
+        #706c73;
+
+    background:
+        linear-gradient(
+            105deg,
+            #96969b 0%,
+            #fdfdfd 7%,
+            #c9c9ce 15%,
+            #ffffff 23%,
+            #a9a9ae 32%,
+            #eeeeef 41%,
+            #bcbcc1 50%,
+            #fafafa 59%,
+            #aaaaaf 68%,
+            #eeeeef 77%,
+            #bdbdc2 87%,
+            #ffffff 96%,
+            #97979c 100%
+        );
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,.95),
+        inset 0 -6px 11px rgba(40,35,42,.25),
+        inset 7px 0 10px rgba(255,255,255,.42),
+        inset -7px 0 10px rgba(45,40,48,.18),
+        12px 14px 0 rgba(68,52,64,.18);
+}
+
+
+/* pink metallic reflection */
+
+.metal-ipod::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border-radius: 27px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(255,255,255,.65) 14%,
+            transparent 27%,
+            rgba(242,179,207,.55) 42%,
+            transparent 57%,
+            rgba(255,255,255,.55) 73%,
+            transparent 88%
+        );
+}
+
+
+/* screws */
+
+.metal-screw {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    background:
+        radial-gradient(
+            circle at 32% 28%,
+            #ffffff,
+            #aaaab0 45%,
+            #717077
+        );
+
+    border: 1px solid #747178;
+
+    box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,.9);
+}
+
+.screw-tl {
+    top: 15px;
+    left: 15px;
+}
+
+.screw-tr {
+    top: 15px;
+    right: 15px;
+}
+
+.screw-bl {
+    bottom: 15px;
+    left: 15px;
+}
+
+.screw-br {
+    bottom: 15px;
+    right: 15px;
+}
+
+
+/* =========================================================
+   PASSWORD IPOD
+========================================================= */
+
+.password-ipod {
+
+    width:
+        min(390px, 92vw);
+
+    padding:
+        29px
+        24px
+        31px;
+
+    /*
+       Pink metallic body.
+    */
+
+    background:
+        linear-gradient(
+            105deg,
+            #a8a8ad 0%,
+            #ffffff 7%,
+            #e9b1c9 17%,
+            #f8d6e3 29%,
+            #b9b9be 41%,
+            #ffffff 53%,
+            #e1a5c0 66%,
+            #f5d0df 77%,
+            #b1b1b6 90%,
+            #ffffff 100%
+        );
+}
+
+.password-brand {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #625560;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   OLD PHONE GREEN SCREEN
+========================================================= */
+
+.password-screen {
+
+    position: relative;
+    z-index: 3;
+
+    min-height: 125px;
+
+    border-radius: 13px;
+
+    border:
+        3px solid
+        #676e61;
+
+    /*
+       Old green LCD screen.
+    */
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9e9bb,
+            #aec58d 48%,
+            #91aa75
+        );
+
+    box-shadow:
+        inset 0 3px 7px rgba(55,70,45,.35),
+        inset 0 0 20px rgba(255,255,255,.25),
+        2px 2px 0 rgba(255,255,255,.75);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 24px;
+}
+
+.password-title {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 17px;
+
+    color: #3d5339;
+
+    margin-bottom: 12px;
+}
+
+.password-dots {
+
+    min-height: 29px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    color: #314b30;
+}
+
+
+/* =========================================================
+   DIAL
+========================================================= */
+
+.dial {
+
+    position: relative;
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    max-width: 280px;
+
+    margin: auto;
+}
+
+.dial button {
+
+    height: 54px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        #77737a;
+
+    background:
+        radial-gradient(
+            circle at 32% 23%,
+            #ffffff,
+            #dedee1 43%,
+            #bdbdc2 72%,
+            #efb5ce
+        );
+
+    color: #665361;
+
+    font-size: 18px;
+
+    box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,.9),
+        2px 3px 0 rgba(70,50,65,.17);
+}
+
+.dial button:active {
+    transform: translateY(2px);
+}
+
+
+/* =========================================================
+   ENTER
+========================================================= */
+
+.password-actions {
+
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.password-actions button {
+
+    border:
+        1px solid
+        #8c7280;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e4e4e7,
+            #efb5ce
+        );
+
+    color: #705668;
+
+    padding:
+        9px
+        20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        2px 3px 0
+        rgba(76,56,72,.13);
+}
+
+
+/* =========================================================
+   MAIN SITE
+========================================================= */
+
+#site {
+    display: none;
+}
+
+.wrapper {
+
+    width:
+        min(1100px, 94%);
+
+    margin: auto;
+
+    padding:
+        30px
+        0
+        70px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    position: relative;
+
+    background: var(--paper);
+
+    padding:
+        35px
+        25px;
+
+    border:
+        2px solid
+        #88727f;
+
+    border-radius: 12px;
+
+    box-shadow:
+        9px 10px 0 var(--shadow);
+
+    transform: rotate(-.6deg);
+
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.header h1 {
+
+    margin: 0;
+
+    font-size:
+        clamp(35px, 7vw, 65px);
+
+    color: #bd7196;
+
+    letter-spacing: 2px;
+}
+
+.header p {
+
+    margin:
+        12px
+        0
+        0;
+
+    font-size: 17px;
+
+    color: var(--muted);
+}
+
+.sticker {
+
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 8px;
+
+    border:
+        2px solid
+        rgba(90,70,85,.3);
+
+    box-shadow:
+        2px 3px 0
+        rgba(80,60,75,.13);
+}
+
+.sticker.one {
+    left: 22px;
+    top: -17px;
+
+    background: var(--blue);
+
+    transform: rotate(-12deg);
+}
+
+.sticker.two {
+    right: 28px;
+    top: -14px;
+
+    background: var(--lime);
+
+    transform: rotate(9deg);
+}
+
+.sticker.three {
+    left: 9%;
+    bottom: -16px;
+
+    background: var(--lav);
+
+    transform: rotate(7deg);
+}
+
+.sticker.four {
+    right: 10%;
+    bottom: -15px;
+
+    background: var(--pink);
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+    position: relative;
+
+    background: var(--paper);
+
+    border:
+        2px solid
+        #887480;
+
+    border-radius: 12px;
+
+    padding:
+        35px
+        30px;
+
+    margin-bottom: 50px;
+
+    box-shadow:
+        9px 11px 0 var(--shadow);
+}
+
+.section:nth-of-type(even) {
+    transform: rotate(.35deg);
+}
+
+.section:nth-of-type(odd) {
+    transform: rotate(-.25deg);
+}
+
+.section-title {
+
+    margin:
+        0
+        0
+        25px;
+
+    font-size:
+        clamp(27px, 5vw, 40px);
+
+    color: #bb7096;
+
+    text-align: center;
+}
+
+.section-subtitle {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    margin-top: -15px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.diary-paper {
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf8 0px,
+            #fffdf8 31px,
+            #dce9ed 32px,
+            #fffdf8 33px
+        );
+
+    border:
+        1px solid
+        #c9b6bd;
+
+    padding: 30px;
+
+    min-height: 310px;
+
+    box-shadow:
+        4px 5px 0
+        rgba(100,80,90,.1);
+
+    transform: rotate(.5deg);
+}
+
+.diary-date {
+
+    text-align: center;
+
+    color: #9a7289;
+
+    font-size: 19px;
+
+    margin-bottom: 22px;
+}
+
+.diary-text {
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   MUSIC IPOD
+========================================================= */
+
+.music-ipod {
+
+    width:
+        min(860px, 100%);
+
+    margin: auto;
+
+    padding: 29px;
+}
+
+.ipod-top {
+
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #665560;
+
+    margin-bottom: 17px;
+}
+
+.ipod-logo {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        1px 1px 1px white;
+}
+
+.ipod-model {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #766873;
+}
+
+.ipod-screen {
+
+    position: relative;
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e8e8ea 45%,
+            #d0d0d4
+        );
+
+    border:
+        2px solid
+        #77737a;
+
+    border-radius: 15px;
+
+    padding: 23px;
+
+    box-shadow:
+        inset 0 3px 10px rgba(0,0,0,.15),
+        inset 0 0 18px rgba(255,255,255,.95);
+}
+
+.now-playing {
+    text-align: center;
+}
+
+.now-playing-title {
+
+    font-size: 27px;
+
+    color: #6e5668;
+}
+
+.now-playing-artist {
+
+    color: #997a8f;
+
+    margin-top: 7px;
+}
+
+.progress-wrap {
+
+    height: 8px;
+
+    background: #c7c7ca;
+
+    border-radius: 20px;
+
+    margin:
+        25px
+        0
+        7px;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 1px 3px rgba(0,0,0,.2);
+}
+
+.progress {
+
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #bc6d96,
+            #e8a9c5,
+            #b96e96
+        );
+
+    border-radius: inherit;
+}
+
+.time-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    color: #887582;
+}
+
+.ipod-controls {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 22px;
+}
+
+.ipod-controls button {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        #77737b;
+
+    background:
+        radial-gradient(
+            circle at 32% 24%,
+            #ffffff,
+            #dedee1 42%,
+            #bdbdc2 70%,
+            #efb6cf
+        );
+
+    color: #70586a;
+
+    font-size: 17px;
+
+    box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,.9),
+        2px 3px 0
+        rgba(70,50,65,.16);
+}
+
+.ipod-controls button.main {
+
+    width: 60px;
+    height: 60px;
+
+    font-size: 21px;
+}
+
+.song-list {
+
+    display: grid;
+
+    gap: 8px;
+
+    margin-top: 24px;
+}
+
+.song-item {
+
+    padding:
+        10px
+        13px;
+
+    border:
+        1px solid
+        #c1b4bd;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.song-item.active {
+
+    background:
+        #f6cede;
+}
+
+
+/* =========================================================
+   TAROT CARDS
+========================================================= */
+
+.tarot-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+}
+
+.tarot-card {
+
+    width: 100%;
+
+    height: 610px;
+
+    perspective: 1600px;
+
+    cursor: pointer;
+}
+
+.tarot-inner {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .8s
+        cubic-bezier(.2,.75,.25,1);
+}
+
+.tarot-card.flipped
+.tarot-inner {
+
+    transform:
+        rotateY(180deg);
+}
+
+.tarot-front,
+.tarot-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   SOLID-COLOUR FRONT
+--------------------------------------------------------- */
+
+.tarot-front {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    /*
+       ONE SOLID PALETTE COLOUR.
+    */
+
+    background:
+        var(--pink);
+
+    border:
+        4px solid
+        #9b6580;
+
+    box-shadow:
+        inset 0 0 0 8px
+        rgba(255,255,255,.25),
+
+        9px 10px 0
+        rgba(76,56,72,.15);
+}
+
+
+/*
+   Change individual card colours here if you want.
+
+   Card 1 = pink
+   Card 2 = blue
+   Card 3 = lavender
+   Card 4 = lime
+   Card 5 = pink
+   Card 6 = blue
+*/
+
+.tarot-card:nth-child(2)
+.tarot-front {
+    background: var(--blue);
+}
+
+.tarot-card:nth-child(3)
+.tarot-front {
+    background: var(--lav);
+}
+
+.tarot-card:nth-child(4)
+.tarot-front {
+    background: var(--lime);
+}
+
+.tarot-card:nth-child(5)
+.tarot-front {
+    background: var(--pink);
+}
+
+.tarot-card:nth-child(6)
+.tarot-front {
+    background: var(--blue);
+}
+
+
+/* little corner stars */
+
+.tarot-front::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 24px;
+    left: 28px;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 32px;
+}
+
+.tarot-front::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    bottom: 24px;
+    right: 28px;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 32px;
+}
+
+
+.tarot-name {
+
+    width: 87%;
+    height: 84%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        2px solid
+        rgba(104,78,99,.42);
+
+    padding: 30px;
+
+    color: #76566b;
+
+    font-size:
+        clamp(30px, 5vw, 52px);
+
+    letter-spacing: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   TAROT BACK
+--------------------------------------------------------- */
+
+.tarot-back {
+
+    transform:
+        rotateY(180deg);
+
+    padding:
+        28px;
+
+    /*
+       The back is also ONE colour.
+       The actual writing section has the decorative border.
+    */
+
+    background:
+        var(--paper);
+
+    border:
+        4px solid
+        #89717f;
+
+    box-shadow:
+        inset 0 0 0 7px
+        rgba(244,181,209,.3),
+
+        9px 10px 0
+        rgba(76,56,72,.15);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/*
+   THIS is the decorative writing border.
+
+   It is NOT a text box.
+   It is simply the area where your HTML text lives.
+*/
+
+.tarot-writing-border {
+
+    flex: 1;
+
+    min-height: 0;
+
+    border:
+        3px solid
+        #c58aa5;
+
+    border-radius: 12px;
+
+    padding:
+        35px
+        40px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf8 0px,
+            #fffdf8 38px,
+            #dce7eb 39px,
+            #fffdf8 40px
+        );
+
+    box-shadow:
+        inset 0 0 0 5px
+        rgba(255,255,255,.7);
+
+    overflow-y: auto;
+}
+
+
+/*
+   This is where you WRITE DIRECTLY in the code.
+
+   There is no input field.
+   There is no textarea.
+*/
+
+.tarot-writing {
+
+    color: #5d5260;
+
+    font-size:
+        clamp(18px, 2.2vw, 24px);
+
+    line-height: 1.75;
+
+    white-space: pre-wrap;
+}
+
+.tarot-writing-border::-webkit-scrollbar {
+    width: 7px;
+}
+
+.tarot-writing-border::-webkit-scrollbar-thumb {
+
+    background:
+        #d0afc1;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   LETTERS
+========================================================= */
+
+.letters-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        55px
+        40px;
+}
+
+.envelope {
+
+    height: 360px;
+
+    position: relative;
+
+    background:
+        #f1cbd9;
+
+    border:
+        2px solid
+        #907482;
+
+    box-shadow:
+        7px 8px 0
+        rgba(76,56,72,.15);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease;
+}
+
+.envelope:hover {
+
+    transform:
+        translateY(-5px)
+        rotate(-1deg);
+}
+
+.envelope-flap {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5dce5,
+            #e8b5c9
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 54%
+        );
+
+    z-index: 2;
+}
+
+.envelope-left {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            45deg,
+            transparent 49%,
+            #dca9be 50%,
+            transparent 51%
+        );
+
+    opacity: .7;
+}
+
+.envelope-bottom {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    padding-bottom: 38px;
+
+    font-size: 25px;
+
+    color: #795b6c;
+}
+
+
+/* =========================================================
+   LONG SCROLLABLE LETTER
+========================================================= */
+
+.letter-overlay,
+.receipt-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(60,45,55,.5);
+}
+
+.letter-overlay.open,
+.receipt-overlay.open {
+
+    display: flex;
+}
+
+.letter-paper {
+
+    width:
+        min(900px, 95vw);
+
+    /*
+       MUCH LONGER.
+       The popup itself is scrollable.
+    */
+
+    height:
+        min(900px, 94vh);
+
+    overflow-y: auto;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf7 0px,
+            #fffdf7 38px,
+            #dce7eb 39px,
+            #fffdf7 40px
+        );
+
+    border:
+        2px solid
+        #88717e;
+
+    box-shadow:
+        12px 15px 0
+        rgba(40,30,40,.2);
+
+    padding:
+        70px
+        75px
+        90px;
+
+    position: relative;
+
+    transform:
+        rotate(-.4deg);
+}
+
+.letter-paper h3 {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #b76e94;
+
+    margin:
+        0
+        0
+        38px;
+}
+
+.letter-paper p {
+
+    white-space: pre-wrap;
+
+    font-size: 27px;
+
+    line-height: 1.85;
+
+    color: #5d5260;
+
+    margin: 0;
+}
+
+.letter-paper::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+.letter-paper::-webkit-scrollbar-thumb {
+
+    background:
+        #d1afc0;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-button {
+
+    position: absolute;
+
+    top: 15px;
+    right: 17px;
+
+    border:
+        1px solid
+        #987486;
+
+    background:
+        #f8c8dc;
+
+    color: #704f63;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   LOCKET
+========================================================= */
+
+.locket-wrap {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding:
+        35px
+        0;
+}
+
+.locket {
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    border:
+        4px solid
+        #81727d;
+
+    background:
+        radial-gradient(
+            circle at 30% 22%,
+            #ffffff 0%,
+            #f7dce7 14%,
+            #edb0cc 34%,
+            #c98ba9 57%,
+            #eebbd3 73%,
+            #a8a8ad 91%,
+            #f8f8f8 100%
+        );
+
+    box-shadow:
+        inset 8px 8px 15px
+        rgba(255,255,255,.9),
+
+        inset -11px -12px 16px
+        rgba(70,50,65,.24),
+
+        9px 11px 0
+        rgba(76,56,72,.16);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease;
+}
+
+.locket:hover {
+
+    transform:
+        rotate(-3deg)
+        scale(1.03);
+}
+
+.locket-inner {
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(120,80,105,.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #76596c;
+
+    font-size: 24px;
+
+    background:
+        rgba(255,255,255,.18);
+}
+
+.locket-clasp {
+
+    position: absolute;
+
+    top: -18px;
+
+    width: 58px;
+    height: 32px;
+
+    border-radius:
+        15px
+        15px
+        5px
+        5px;
+
+    border:
+        3px solid
+        #807480;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #c7c7cb,
+            #f1b9d2
+        );
+}
+
+
+/* =========================================================
+   RECEIPT
+========================================================= */
+
+.receipt {
+
+    position: relative;
+
+    width:
+        min(500px, 92vw);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding:
+        40px
+        30px
+        35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f3ecdf,
+            #fffdf6 8%,
+            #fffdf6 92%,
+            #f3ecdf
+        );
+
+    color: #4f4a4e;
+
+    box-shadow:
+        8px 10px 0
+        rgba(40,32,38,.20);
+
+    /*
+       Torn receipt edges.
+    */
+
+    clip-path:
+        polygon(
+            0 0,
+            3% 1%,
+            6% 0,
+            9% 1%,
+            12% 0,
+            15% 1%,
+            18% 0,
+            21% 1%,
+            24% 0,
+            27% 1%,
+            30% 0,
+            33% 1%,
+            36% 0,
+            39% 1%,
+            42% 0,
+            45% 1%,
+            48% 0,
+            51% 1%,
+            54% 0,
+            57% 1%,
+            60% 0,
+            63% 1%,
+            66% 0,
+            69% 1%,
+            72% 0,
+            75% 1%,
+            78% 0,
+            81% 1%,
+            84% 0,
+            87% 1%,
+            90% 0,
+            93% 1%,
+            96% 0,
+            100% 1%,
+
+            100% 99%,
+            97% 100%,
+            94% 99%,
+            91% 100%,
+            88% 99%,
+            85% 100%,
+            82% 99%,
+            79% 100%,
+            76% 99%,
+            73% 100%,
+            70% 99%,
+            67% 100%,
+            64% 99%,
+            61% 100%,
+            58% 99%,
+            55% 100%,
+            52% 99%,
+            49% 100%,
+            46% 99%,
+            43% 100%,
+            40% 99%,
+            37% 100%,
+            34% 99%,
+            31% 100%,
+            28% 99%,
+            25% 100%,
+            22% 99%,
+            19% 100%,
+            16% 99%,
+            13% 100%,
+            10% 99%,
+            7% 100%,
+            4% 99%,
+            0 100%
+        );
+}
+
+.receipt-header {
+
+    text-align: center;
+
+    padding-bottom: 17px;
+
+    border-bottom:
+        2px dashed
+        #9e9790;
+}
+
+.receipt-store {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+    color: #77716e;
+}
+
+.receipt-header h3 {
+
+    margin: 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 24px;
+
+    color: #4f4a4e;
+}
+
+.receipt-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin:
+        15px
+        0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    color: #77716e;
+}
+
+.receipt-line {
+
+    border-top:
+        1px dashed
+        #aaa39c;
+
+    margin:
+        12px
+        0;
+}
+
+.reason-list {
+
+    margin:
+        18px
+        0;
+
+    padding-left: 0;
+
+    list-style: none;
+}
+
+.reason-list li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        7px
+        0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    border-bottom:
+        1px dotted
+        #d1cbc3;
+}
+
+.reason-number {
+
+    color: #817a75;
+
+    min-width: 27px;
+}
+
+.reason-text {
+
+    flex: 1;
+}
+
+.reason-price {
+
+    white-space: nowrap;
+
+    color: #77716e;
+}
+
+.receipt-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        2px solid
+        #77716e;
+
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+.receipt-footer {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color: #77716e;
+}
+
+.receipt-barcode {
+
+    margin:
+        16px
+        auto
+        0;
+
+    width: 190px;
+    height: 38px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #555 0 2px,
+            transparent 2px 4px,
+            #555 4px 5px,
+            transparent 5px 8px,
+            #555 8px 11px,
+            transparent 11px 13px
+        );
+}
+
+
+/* =========================================================
+   VOICE MEMO IPOD
+========================================================= */
+
+.voice-ipod {
+
+    width:
+        min(780px, 100%);
+
+    margin: auto;
+
+    padding: 29px;
+}
+
+.voice-screen {
+
+    position: relative;
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e7e7e9 45%,
+            #cfcfd3
+        );
+
+    border:
+        2px solid
+        #77737a;
+
+    border-radius: 15px;
+
+    padding: 29px;
+
+    box-shadow:
+        inset 0 3px 10px rgba(0,0,0,.15),
+        inset 0 0 18px rgba(255,255,255,.95);
+}
+
+.voice-title {
+
+    text-align: center;
+
+    font-size: 26px;
+
+    color: #70566a;
+}
+
+.voice-subtitle {
+
+    text-align: center;
+
+    margin-top: 7px;
+
+    color: #9b7b90;
+}
+
+.waveform {
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    margin: 22px 0;
+}
+
+.wave-bar {
+
+    width: 5px;
+
+    height: 25px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e7a8c4,
+            #b96e96,
+            #e8afc8
+        );
+
+    animation:
+        wave 1s
+        ease-in-out
+        infinite;
+
+    animation-play-state:
+        paused;
+}
+
+.wave-bar:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.wave-bar:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.wave-bar:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.wave-bar:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.wave-bar:nth-child(6) {
+    animation-delay: .3s;
+}
+
+.wave-bar:nth-child(7) {
+    animation-delay: .2s;
+}
+
+.wave-bar:nth-child(8) {
+    animation-delay: .1s;
+}
+
+.voice-ipod.playing
+.wave-bar {
+
+    animation-play-state:
+        running;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 18px;
+    }
+
+    50% {
+        height: 72px;
+    }
+}
+
+.voice-controls {
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.voice-controls button {
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        #77737b;
+
+    background:
+        radial-gradient(
+            circle at 32% 24%,
+            #ffffff,
+            #dedee1 42%,
+            #bdbdc2 70%,
+            #efb6cf
+        );
+
+    color: #70586a;
+
+    font-size: 22px;
+
+    box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,.9),
+        2px 3px 0
+        rgba(70,50,65,.16);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    color: #806c79;
+
+    padding: 20px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .wrapper {
+
+        width: 94%;
+
+        padding-top: 18px;
+    }
+
+    .section {
+
+        padding:
+            25px
+            18px;
+    }
+
+    .header {
+
+        padding:
+            30px
+            18px;
+    }
+
+    .diary-paper {
+
+        padding:
+            22px
+            18px;
+    }
+
+    .diary-text {
+
+        font-size: 17px;
+
+        line-height: 1.9;
+    }
+
+    .music-ipod,
+    .voice-ipod {
+
+        padding: 18px;
+
+        border-radius: 27px;
+    }
+
+    .ipod-controls {
+
+        gap: 12px;
+    }
+
+
+    /* tarot */
+
+    .tarot-card {
+
+        height: 550px;
+    }
+
+    .tarot-back {
+
+        padding: 20px;
+    }
+
+    .tarot-writing-border {
+
+        padding:
+            27px
+            22px;
+    }
+
+    .tarot-writing {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+    }
+
+    .tarot-name {
+
+        font-size: 29px;
+    }
+
+
+    /* letters */
+
+    .letters-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .envelope {
+
+        height: 320px;
+    }
+
+    .letter-paper {
+
+        width: 95vw;
+
+        height: 92vh;
+
+        padding:
+            55px
+            25px
+            55px;
+    }
+
+    .letter-paper h3 {
+
+        font-size: 32px;
+    }
+
+    .letter-paper p {
+
+        font-size: 21px;
+
+        line-height: 1.8;
+    }
+
+
+    /* locket */
+
+    .locket {
+
+        width: 230px;
+        height: 230px;
+    }
+
+    .locket-inner {
+
+        width: 165px;
+        height: 165px;
+    }
+
+
+    /* receipt */
+
+    .receipt {
+
+        padding:
+            35px
+            20px
+            30px;
+    }
+
+    .reason-list li {
+
+        font-size: 11px;
+    }
+
+    .reason-price {
+
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .tarot-card {
+
+        height: 520px;
+    }
+
+    .ipod-screen,
+    .voice-screen {
+
+        padding: 19px;
+    }
+
+    .now-playing-title,
+    .voice-title {
+
+        font-size: 22px;
+    }
+
+    .password-ipod {
+
+        padding:
+            24px
+            18px
+            27px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PASSWORD PAGE
+===================================================== -->
+
+<div id="passwordScreen">
+
+    <div class="password-ipod metal-ipod">
+
+        <div class="metal-screw screw-tl"></div>
+        <div class="metal-screw screw-tr"></div>
+        <div class="metal-screw screw-bl"></div>
+        <div class="metal-screw screw-br"></div>
+
+
+        <div class="password-brand">
+            MY LITTLE IPOD
+        </div>
+
+
+        <div class="password-screen">
+
+            <div class="password-title">
+                enter password
+            </div>
+
+            <div
+                class="password-dots"
+                id="passwordDisplay"
+            ></div>
+
+        </div>
+
+
+        <div class="dial">
+
+            <button onclick="pressKey('1')">1</button>
+            <button onclick="pressKey('2')">2</button>
+            <button onclick="pressKey('3')">3</button>
+
+            <button onclick="pressKey('4')">4</button>
+            <button onclick="pressKey('5')">5</button>
+            <button onclick="pressKey('6')">6</button>
+
+            <button onclick="pressKey('7')">7</button>
+            <button onclick="pressKey('8')">8</button>
+            <button onclick="pressKey('9')">9</button>
+
+            <button onclick="backspace()">⌫</button>
+            <button onclick="pressKey('0')">0</button>
+            <button onclick="clearPassword()">C</button>
+
+        </div>
+
+
+        <div class="password-actions">
+
+            <button onclick="submitPassword()">
+                enter
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+<div id="site">
+
+<div class="wrapper">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="sticker one"></div>
+    <div class="sticker two"></div>
+    <div class="sticker three"></div>
+    <div class="sticker four"></div>
+
+    <h1>
+        my little scrapbook
+    </h1>
+
+    <p>
+        a tiny corner of the internet ♡
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        hello :)
+    </h2>
+
+    <p class="section-subtitle">
+        a little something before everything else
+    </p>
+
+
+    <div class="diary-paper">
+
+        <div class="diary-date">
+            𓂃 ࣪˖ ִֶָ 11:11 𓂃 ࣪˖ ִֶָ
+        </div>
+
+        <div class="diary-text">
+
+WRITE YOUR INTRO HERE.
+
+Everything in this section is
+normal HTML text.
+
+Change this whenever you want.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        music
+    </h2>
+
+    <p class="section-subtitle">
+        songs that belong here
+    </p>
+
+
+    <div class="music-ipod metal-ipod">
+
+        <div class="metal-screw screw-tl"></div>
+        <div class="metal-screw screw-tr"></div>
+        <div class="metal-screw screw-bl"></div>
+        <div class="metal-screw screw-br"></div>
+
+
+        <div class="ipod-top">
+
+            <div class="ipod-logo">
+                iPod
+            </div>
+
+            <div class="ipod-model">
+                MUSIC PLAYER
+            </div>
+
+        </div>
+
+
+        <div class="ipod-screen">
+
+            <div class="now-playing">
+
+                <div
+                    class="now-playing-title"
+                    id="trackTitle"
+                >
+                    SONG ONE
+                </div>
+
+                <div
+                    class="now-playing-artist"
+                    id="trackArtist"
+                >
+                    ARTIST ONE
+                </div>
+
+            </div>
+
+
+            <div class="progress-wrap">
+
+                <div
+                    class="progress"
+                    id="progress"
+                ></div>
+
+            </div>
+
+
+            <div class="time-row">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+
+            <div class="ipod-controls">
+
+                <button onclick="previousTrack()">
+                    ◀◀
+                </button>
+
+                <button
+                    class="main"
+                    id="musicPlayButton"
+                    onclick="toggleMusic()"
+                >
+                    ▶
+                </button>
+
+                <button onclick="nextTrack()">
+                    ▶▶
+                </button>
+
+            </div>
+
+
+            <div
+                class="song-list"
+                id="songList"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        id="musicAudio"
+        preload="metadata"
+    ></audio>
+
+</section>
+
+
+
+<!-- =====================================================
+     TAROT CARDS
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        six little cards
+    </h2>
+
+    <p class="section-subtitle">
+        click a card to turn it over
+    </p>
+
+
+    <div class="tarot-list">
+
+
+        <!-- =================================================
+             CARD 1
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD ONE
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR FIRST DESCRIPTION HERE.
+
+You are writing directly in the
+HTML itself.
+
+There is no text box.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD 2
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD TWO
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR SECOND DESCRIPTION HERE.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD 3
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD THREE
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR THIRD DESCRIPTION HERE.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD 4
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD FOUR
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR FOURTH DESCRIPTION HERE.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD 5
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD FIVE
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR FIFTH DESCRIPTION HERE.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD 6
+        ================================================= -->
+
+        <div
+            class="tarot-card"
+            onclick="flipTarot(this)"
+        >
+
+            <div class="tarot-inner">
+
+
+                <div class="tarot-front">
+
+                    <div class="tarot-name">
+                        CARD SIX
+                    </div>
+
+                </div>
+
+
+                <div class="tarot-back">
+
+                    <div class="tarot-writing-border">
+
+                        <div class="tarot-writing">
+
+WRITE YOUR SIXTH DESCRIPTION HERE.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LETTERS
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        six little letters
+    </h2>
+
+    <p class="section-subtitle">
+        click an envelope
+    </p>
+
+
+    <div class="letters-grid">
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(0)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter one
+            </div>
+
+        </div>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(1)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter two
+            </div>
+
+        </div>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(2)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter three
+            </div>
+
+        </div>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(3)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter four
+            </div>
+
+        </div>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(4)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter five
+            </div>
+
+        </div>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter(5)"
+        >
+
+            <div class="envelope-left"></div>
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-bottom">
+                letter six
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LETTER POPUP
+===================================================== -->
+
+<div
+    class="letter-overlay"
+    id="letterOverlay"
+    onclick="closeLetterOutside(event)"
+>
+
+    <div class="letter-paper">
+
+        <button
+            class="close-button"
+            onclick="closeLetter()"
+        >
+            ×
+        </button>
+
+        <h3 id="letterTitle">
+            Dear you,
+        </h3>
+
+        <p id="letterText">
+            LETTER ONE GOES HERE.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     LOCKET
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        24 reasons
+    </h2>
+
+    <p class="section-subtitle">
+        click the locket
+    </p>
+
+
+    <div class="locket-wrap">
+
+        <div
+            class="locket"
+            onclick="openReceipt()"
+            tabindex="0"
+            role="button"
+            aria-label="Open locket"
+            onkeydown="
+                if(event.key==='Enter' || event.key===' ')
+                openReceipt()
+            "
+        >
+
+            <div class="locket-clasp"></div>
+
+            <div class="locket-inner">
+
+                ✦<br>
+                24 little<br>
+                reasons<br>
+                ✦
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RECEIPT
+===================================================== -->
+
+<div
+    class="receipt-overlay"
+    id="receiptOverlay"
+    onclick="closeReceiptOutside(event)"
+>
+
+    <div class="receipt">
+
+        <button
+            class="close-button"
+            onclick="closeReceipt()"
+        >
+            ×
+        </button>
+
+
+        <div class="receipt-header">
+
+            <div class="receipt-store">
+                LITTLE SCRAPBOOK
+            </div>
+
+            <h3>
+                REASONS RECEIPT
+            </h3>
+
+        </div>
+
+
+        <div class="receipt-meta">
+
+            <span>
+                DATE: ______
+            </span>
+
+            <span>
+                #001
+            </span>
+
+        </div>
+
+
+        <div class="receipt-line"></div>
+
+
+        <ol class="reason-list">
+
+            <li><span class="reason-number">01</span><span class="reason-text">REASON ONE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">02</span><span class="reason-text">REASON TWO</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">03</span><span class="reason-text">REASON THREE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">04</span><span class="reason-text">REASON FOUR</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">05</span><span class="reason-text">REASON FIVE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">06</span><span class="reason-text">REASON SIX</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">07</span><span class="reason-text">REASON SEVEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">08</span><span class="reason-text">REASON EIGHT</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">09</span><span class="reason-text">REASON NINE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">10</span><span class="reason-text">REASON TEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">11</span><span class="reason-text">REASON ELEVEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">12</span><span class="reason-text">REASON TWELVE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">13</span><span class="reason-text">REASON THIRTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">14</span><span class="reason-text">REASON FOURTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">15</span><span class="reason-text">REASON FIFTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">16</span><span class="reason-text">REASON SIXTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">17</span><span class="reason-text">REASON SEVENTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">18</span><span class="reason-text">REASON EIGHTEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">19</span><span class="reason-text">REASON NINETEEN</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">20</span><span class="reason-text">REASON TWENTY</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">21</span><span class="reason-text">REASON TWENTY-ONE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">22</span><span class="reason-text">REASON TWENTY-TWO</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">23</span><span class="reason-text">REASON TWENTY-THREE</span><span class="reason-price">♡</span></li>
+            <li><span class="reason-number">24</span><span class="reason-text">REASON TWENTY-FOUR</span><span class="reason-price">♡</span></li>
+
+        </ol>
+
+
+        <div class="receipt-total">
+
+            <span>
+                TOTAL REASONS
+            </span>
+
+            <span>
+                24
+            </span>
+
+        </div>
+
+
+        <div class="receipt-footer">
+
+            THANK YOU FOR YOUR PURCHASE<br>
+            NO RETURNS ♡<br>
+            KEEP THIS RECEIPT
+
+            <div class="receipt-barcode"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     VOICE MEMO
+===================================================== -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        voicemail
+    </h2>
+
+    <p class="section-subtitle">
+        one little voice memo
+    </p>
+
+
+    <div
+        class="voice-ipod metal-ipod"
+        id="voiceIpod"
+    >
+
+        <div class="metal-screw screw-tl"></div>
+        <div class="metal-screw screw-tr"></div>
+        <div class="metal-screw screw-bl"></div>
+        <div class="metal-screw screw-br"></div>
+
+
+        <div class="ipod-top">
+
+            <div class="ipod-logo">
+                iPod
+            </div>
+
+            <div class="ipod-model">
+                VOICE MEMO
+            </div>
+
+        </div>
+
+
+        <div class="voice-screen">
+
+            <div class="voice-title">
+                voice memo
+            </div>
+
+            <div class="voice-subtitle">
+                one recording
+            </div>
+
+
+            <div class="waveform">
+
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+
+            </div>
+
+
+            <div class="voice-controls">
+
+                <button
+                    id="voicePlayButton"
+                    onclick="toggleVoiceMemo()"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <audio
+        id="voiceAudio"
+        preload="metadata"
+    ></audio>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    made with too much stationery and questionable decisions ✦
+
+</footer>
+
+
+</div>
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+const correctPassword = "2334";
+
+let enteredPassword = "";
+
+const passwordScreen =
+    document.getElementById(
+        "passwordScreen"
+    );
+
+const site =
+    document.getElementById(
+        "site"
+    );
+
+const passwordDisplay =
+    document.getElementById(
+        "passwordDisplay"
+    );
+
+
+function updatePasswordDisplay() {
+
+    passwordDisplay.textContent =
+        "●".repeat(
+            enteredPassword.length
+        );
+
+}
+
+
+function pressKey(number) {
+
+    if (
+        enteredPassword.length >= 4
+    ) {
+        return;
+    }
+
+    enteredPassword += number;
+
+    updatePasswordDisplay();
+
+}
+
+
+function backspace() {
+
+    enteredPassword =
+        enteredPassword.slice(0, -1);
+
+    updatePasswordDisplay();
+
+}
+
+
+function clearPassword() {
+
+    enteredPassword = "";
+
+    updatePasswordDisplay();
+
+}
+
+
+function submitPassword() {
+
+    if (
+        enteredPassword ===
+        correctPassword
+    ) {
+
+        passwordScreen.style.display =
+            "none";
+
+        site.style.display =
+            "block";
+
+    } else {
+
+        enteredPassword = "";
+
+        updatePasswordDisplay();
+
+    }
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            passwordScreen.style.display ===
+            "none"
+        ) {
+            return;
+        }
+
+        if (
+            /^[0-9]$/.test(event.key)
+        ) {
+
+            pressKey(event.key);
+
+        } else if (
+            event.key === "Backspace"
+        ) {
+
+            backspace();
+
+        } else if (
+            event.key === "Escape"
+        ) {
+
+            clearPassword();
+
+        } else if (
+            event.key === "Enter"
+        ) {
+
+            submitPassword();
+
+        }
+
+    }
+);
+
+
+updatePasswordDisplay();
+
+
+
+/* =========================================================
+   TAROT
+========================================================= */
+
+function flipTarot(card) {
+
+    card.classList.toggle(
+        "flipped"
+    );
+
+}
+
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+/*
+   PASTE YOUR THREE SONG LINKS HERE.
+*/
+
+const tracks = [
+
+    {
+        title: "SONG ONE",
+        artist: "ARTIST ONE",
+        url: "PASTE SONG 1 LINK HERE"
+    },
+
+    {
+        title: "SONG TWO",
+        artist: "ARTIST TWO",
+        url: "PASTE SONG 2 LINK HERE"
+    },
+
+    {
+        title: "SONG THREE",
+        artist: "ARTIST THREE",
+        url: "PASTE SONG 3 LINK HERE"
+    }
+
+];
+
+
+let currentTrack = 0;
+
+const musicAudio =
+    document.getElementById(
+        "musicAudio"
+    );
+
+const trackTitle =
+    document.getElementById(
+        "trackTitle"
+    );
+
+const trackArtist =
+    document.getElementById(
+        "trackArtist"
+    );
+
+const progress =
+    document.getElementById(
+        "progress"
+    );
+
+const currentTimeDisplay =
+    document.getElementById(
+        "currentTime"
+    );
+
+const durationDisplay =
+    document.getElementById(
+        "duration"
+    );
+
+const musicPlayButton =
+    document.getElementById(
+        "musicPlayButton"
+    );
+
+const songList =
+    document.getElementById(
+        "songList"
+    );
+
+
+function formatTime(seconds) {
+
+    if (
+        !Number.isFinite(seconds)
+    ) {
+        return "0:00";
+    }
+
+    const minutes =
+        Math.floor(
+            seconds / 60
+        );
+
+    const secs =
+        Math.floor(
+            seconds % 60
+        )
+        .toString()
+        .padStart(2, "0");
+
+    return `${minutes}:${secs}`;
+
+}
+
+
+function loadTrack(
+    index,
+    autoplay = false
+) {
+
+    currentTrack =
+        (
+            index +
+            tracks.length
+        ) %
+        tracks.length;
+
+    const track =
+        tracks[currentTrack];
+
+    trackTitle.textContent =
+        track.title;
+
+    trackArtist.textContent =
+        track.artist;
+
+    progress.style.width =
+        "0%";
+
+    currentTimeDisplay.textContent =
+        "0:00";
+
+    durationDisplay.textContent =
+        "0:00";
+
+    musicAudio.pause();
+
+    musicAudio.src =
+        track.url;
+
+    musicAudio.load();
+
+    renderSongList();
+
+    if (
+        autoplay &&
+        track.url &&
+        !track.url.includes(
+            "PASTE"
+        )
+    ) {
+
+        musicAudio
+            .play()
+            .catch(() => {});
+
+    }
+
+}
+
+
+function toggleMusic() {
+
+    if (
+        !musicAudio.src ||
+        musicAudio.src ===
+        window.location.href
+    ) {
+        return;
+    }
+
+    if (
+        musicAudio.paused
+    ) {
+
+        musicAudio
+            .play()
+            .catch(() => {});
+
+    } else {
+
+        musicAudio.pause();
+
+    }
+
+}
+
+
+function nextTrack() {
+
+    loadTrack(
+        currentTrack + 1,
+        true
+    );
+
+}
+
+
+function previousTrack() {
+
+    if (
+        musicAudio.currentTime > 3
+    ) {
+
+        musicAudio.currentTime = 0;
+
+        return;
+
+    }
+
+    loadTrack(
+        currentTrack - 1,
+        true
+    );
+
+}
+
+
+function renderSongList() {
+
+    songList.innerHTML = "";
+
+    tracks.forEach(
+        (track, index) => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "song-item" +
+                (
+                    index === currentTrack
+                        ? " active"
+                        : ""
+                );
+
+            item.textContent =
+                `${index + 1}. ${track.title}`;
+
+            item.addEventListener(
+                "click",
+                function() {
+
+                    loadTrack(
+                        index,
+                        true
+                    );
+
+                }
+            );
+
+            songList.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+musicAudio.addEventListener(
+    "timeupdate",
+    function() {
+
+        if (
+            musicAudio.duration
+        ) {
+
+            const percentage =
+                (
+                    musicAudio.currentTime /
+                    musicAudio.duration
+                ) * 100;
+
+            progress.style.width =
+                `${percentage}%`;
+
+        }
+
+        currentTimeDisplay.textContent =
+            formatTime(
+                musicAudio.currentTime
+            );
+
+    }
+);
+
+
+musicAudio.addEventListener(
+    "loadedmetadata",
+    function() {
+
+        durationDisplay.textContent =
+            formatTime(
+                musicAudio.duration
+            );
+
+    }
+);
+
+
+musicAudio.addEventListener(
+    "play",
+    function() {
+
+        musicPlayButton.textContent =
+            "❚❚";
+
+    }
+);
+
+
+musicAudio.addEventListener(
+    "pause",
+    function() {
+
+        musicPlayButton.textContent =
+            "▶";
+
+    }
+);
+
+
+musicAudio.addEventListener(
+    "ended",
+    function() {
+
+        nextTrack();
+
+    }
+);
+
+
+loadTrack(0);
+
+
+
+/* =========================================================
+   LETTERS
+========================================================= */
+
+const letters = [
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER ONE GOES HERE.
+
+This is intentionally a long scrollable paper.
+
+Write as much as you want here.
+
+You can have multiple paragraphs.
+
+The paper will scroll when your letter gets longer.`
+    },
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER TWO GOES HERE.`
+    },
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER THREE GOES HERE.`
+    },
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER FOUR GOES HERE.`
+    },
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER FIVE GOES HERE.`
+    },
+
+    {
+        title: "Dear you,",
+
+        text:
+`LETTER SIX GOES HERE.`
+    }
+
+];
+
+
+const letterOverlay =
+    document.getElementById(
+        "letterOverlay"
+    );
+
+const letterTitle =
+    document.getElementById(
+        "letterTitle"
+    );
+
+const letterText =
+    document.getElementById(
+        "letterText"
+    );
+
+
+function openLetter(index) {
+
+    letterTitle.textContent =
+        letters[index].title;
+
+    letterText.textContent =
+        letters[index].text;
+
+    letterOverlay.classList.add(
+        "open"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeLetter() {
+
+    letterOverlay.classList.remove(
+        "open"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+function closeLetterOutside(event) {
+
+    if (
+        event.target ===
+        letterOverlay
+    ) {
+
+        closeLetter();
+
+    }
+
+}
+
+
+
+/* =========================================================
+   LOCKET
+========================================================= */
+
+const receiptOverlay =
+    document.getElementById(
+        "receiptOverlay"
+    );
+
+
+function openReceipt() {
+
+    receiptOverlay.classList.add(
+        "open"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeReceipt() {
+
+    receiptOverlay.classList.remove(
+        "open"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+function closeReceiptOutside(event) {
+
+    if (
+        event.target ===
+        receiptOverlay
+    ) {
+
+        closeReceipt();
+
+    }
+
+}
+
+
+
+/* =========================================================
+   VOICE MEMO
+========================================================= */
+
+/*
+   PASTE YOUR ONE VOICE MEMO LINK HERE.
+*/
+
+const voiceMemoURL =
+    "PASTE VOICE MEMO LINK HERE";
+
+
+const voiceAudio =
+    document.getElementById(
+        "voiceAudio"
+    );
+
+const voiceIpod =
+    document.getElementById(
+        "voiceIpod"
+    );
+
+const voicePlayButton =
+    document.getElementById(
+        "voicePlayButton"
+    );
+
+
+voiceAudio.src =
+    voiceMemoURL;
+
+
+function toggleVoiceMemo() {
+
+    if (
+        !voiceMemoURL ||
+        voiceMemoURL.includes(
+            "PASTE"
+        )
+    ) {
+        return;
+    }
+
+    if (
+        voiceAudio.paused
+    ) {
+
+        voiceAudio
+            .play()
+            .catch(() => {});
+
+    } else {
+
+        voiceAudio.pause();
+
+    }
+
+}
+
+
+voiceAudio.addEventListener(
+    "play",
+    function() {
+
+        voiceIpod.classList.add(
+            "playing"
+        );
+
+        voicePlayButton.textContent =
+            "❚❚";
+
+    }
+);
+
+
+voiceAudio.addEventListener(
+    "pause",
+    function() {
+
+        voiceIpod.classList.remove(
+            "playing"
+        );
+
+        voicePlayButton.textContent =
+            "▶";
+
+    }
+);
+
+
+voiceAudio.addEventListener(
+    "ended",
+    function() {
+
+        voiceIpod.classList.remove(
+            "playing"
+        );
+
+        voicePlayButton.textContent =
+            "▶";
+
+    }
+);
+
+
+
+/* =========================================================
+   ESCAPE TO CLOSE POPUPS
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeLetter();
+            closeReceipt();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
